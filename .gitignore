@@ -1,0 +1,8 @@
+# Build output
+/dist/
+
+# Project data written by the program when it runs from the source tree
+zwetag.json
+zwetag.json.bak
+zwetag.log
+exports/

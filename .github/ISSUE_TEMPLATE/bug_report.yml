@@ -1,0 +1,44 @@
+name: Bug report
+description: Something does not work as it should
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: ZweTag version
+      description: Settings → About, or `zwetag --version`
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where it runs
+      options:
+        - Windows, own window
+        - Windows, browser
+        - Linux
+        - macOS
+        - Online version
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: What you did, step by step.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: textarea
+    id: project
+    attributes:
+      label: Project file (optional)
+      description: A small zwetag.json that shows the problem. It contains your rack and cable inventory; remove anything you do not want to share.
+      render: json
