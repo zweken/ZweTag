@@ -252,6 +252,18 @@ async function main() {
     await page.screenshot({ path: join(OUT, "connect-dark.png") });
     console.log("    saved docs/screenshots/connect-dark.png");
 
+    await go("print");
+    check(await count("#print-preview .sheet-label") > 0, "labels in the dark preview");
+    await shot("print-dark.png");
+
+    // A device open for editing, with its named port.
+    await go("devices");
+    await page.click(".chip:has-text('A01')");
+    await page.click(".rack-dev:has-text('U20')");
+    await page.waitForSelector("#port-name-dev-3-4");
+    check((await page.inputValue("#port-name-dev-3-4")) === "iLO", "port names in the device form");
+    await shot("devices-dark.png");
+
     // A plain browser has no window functions: no window buttons, no resize handles.
     const plain = await browser.newPage({ viewport: VIEWPORT });
     plain.on("pageerror", (e) => errors.push(e.message));

@@ -57,7 +57,11 @@ the administration standard for cabling.
   </tr>
   <tr>
     <td><img src="docs/screenshots/print.png" alt="Print"></td>
-    <td><img src="docs/screenshots/connect-dark.png" alt="Dark theme"></td>
+    <td><img src="docs/screenshots/print-dark.png" alt="Print, dark theme"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/connect-dark.png" alt="Connect, dark theme"></td>
+    <td><img src="docs/screenshots/devices-dark.png" alt="Editing a device, dark theme"></td>
   </tr>
 </table>
 
