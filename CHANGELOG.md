@@ -6,6 +6,19 @@ All notable changes to ZweTag are recorded here. The format follows
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-02
+
+### Added
+- A build for Linux on 64-bit ARM, `zwetag-linux-arm64`, for example a
+  Raspberry Pi 4 or 5.
+- `ZweTag.exe` carries its product name, version and publisher, which
+  Windows shows in the file's properties.
+- A [code signing policy](https://github.com/zweken/ZweTag/blob/main/CODE_SIGNING.md).
+
+### Changed
+- The download section of the README says which file fits which computer
+  and how to run it on macOS and Linux.
+
 ## [1.0.0] - 2026-10-01
 
 ### Added
@@ -24,5 +37,6 @@ All notable changes to ZweTag are recorded here. The format follows
 - One program for Windows (its own window), Linux and macOS (the default
   browser), and the same interface online, storing the project in the browser.
 
-[Unreleased]: https://github.com/zweken/ZweTag/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/zweken/ZweTag/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/zweken/ZweTag/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/zweken/ZweTag/releases/tag/v1.0.0

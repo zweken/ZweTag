@@ -116,6 +116,11 @@ else
   if [ -z "$diffs" ]; then pass 11 "web/brand matches logo/"; else fail 11 "web/brand differs from logo/: $diffs"; fi
 fi
 
+# 12. ZweTag.exe gets its icon and version information that matches the online build
+version=$(sed -n 's/^export const VERSION = "\(.*\)";$/\1/p' web/assets/about.js)
+out=$(python3 gates/check-winres.py cmd/zwetag/rsrc_windows_amd64.syso "$version" 2>&1)
+if [ $? -eq 0 ]; then pass 12 "Windows resources: $out"; else fail 12 "Windows resources (scripts/winres.sh makes them)"; printf '%s\n' "$out" | show; fi
+
 if [ "$failed" -ne 0 ]; then
   echo "gate: RED ($failed failed)"
   exit 1

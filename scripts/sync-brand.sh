@@ -4,8 +4,8 @@
 #     replacing web/brand/ as a whole so nothing stale stays behind (gate step 11 checks the copy)
 #   - web/index.html: the lines of logo/favicon/head-snippet.html between the brand markers, with
 #     the paths made relative (brand/favicon/...), because the online version lives in a subfolder
-#   - cmd/zwetag/rsrc_windows_amd64.syso: the Windows icon resource, made from logo/icon/ZweTag.ico
-#     by rsrc (go install github.com/akavel/rsrc@latest); without rsrc the committed file stays
+#   - cmd/zwetag/rsrc_windows_amd64.syso: the Windows icon and version information, made by
+#     scripts/winres.sh from logo/icon/ZweTag.ico and the version in web/assets/about.js
 set -euo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
@@ -36,10 +36,4 @@ open("web/index.html", "w", encoding="utf-8").write(page)
 print(f"web/index.html: {len(lines)} head lines from logo/favicon/head-snippet.html")
 PY
 
-RSRC="$(command -v rsrc || echo "$HOME/go/bin/rsrc")"
-if [ -x "$RSRC" ]; then
-  "$RSRC" -ico logo/icon/ZweTag.ico -arch amd64 -o cmd/zwetag/rsrc_windows_amd64.syso
-  echo "cmd/zwetag/rsrc_windows_amd64.syso: from logo/icon/ZweTag.ico"
-else
-  echo "rsrc not found: cmd/zwetag/rsrc_windows_amd64.syso not refreshed"
-fi
+scripts/winres.sh

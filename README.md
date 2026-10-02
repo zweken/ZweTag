@@ -79,22 +79,41 @@ the administration standard for cabling.
 
 ## Download
 
-**Windows** — get `ZweTag.exe` from the [latest release](https://github.com/zweken/ZweTag/releases/latest)
-and run it. It is a single file with nothing to install and opens in its own window (it uses the
-WebView2 runtime that ships with Windows 11 and current Windows 10). Your project is saved as
-`zwetag.json` next to the program.
+Pick the file for your computer on the [latest release](https://github.com/zweken/ZweTag/releases/latest):
 
-**Linux and macOS** — the binaries on the same page open ZweTag in your default browser.
+| Your computer | File |
+|---|---|
+| Windows 10 or 11 | `ZweTag.exe` |
+| Mac with Apple silicon (M1 or later) | `zwetag-darwin-arm64` |
+| Mac with an Intel processor | `zwetag-darwin-amd64` |
+| Linux on a 64-bit PC | `zwetag-linux-amd64` |
+| Linux on 64-bit ARM, such as a Raspberry Pi 4 or 5 | `zwetag-linux-arm64` |
+
+Each is a single file with nothing to install. Your project is saved as `zwetag.json` next to it.
+
+**Windows** — run `ZweTag.exe`. It opens in its own window, using the WebView2 runtime that ships
+with Windows 11 and current Windows 10.
+
+**macOS and Linux** — ZweTag opens in your default browser. Make the file executable once and run
+it from a terminal, for example:
+
+    chmod +x zwetag-darwin-arm64
+    ./zwetag-darwin-arm64
+
+A Mac stops the first run because the program is not notarized by Apple: open System Settings →
+Privacy & Security, allow the program under Security, and run it again.
 
 **No download** — [use it online](https://zweken.github.io/ZweTag/). The project is stored in your
 browser and can be saved to a file.
 
 ### About the Windows warning
 
-The program is not code-signed, so Windows SmartScreen asks before the first run. Check what you
-downloaded against `SHA256SUMS` on the release page, or verify its build provenance:
+The program is not code-signed yet, so Windows SmartScreen asks before the first run. Check what
+you downloaded against `SHA256SUMS` on the release page, or verify its build provenance:
 
     gh attestation verify ZweTag.exe --owner zweken
+
+How releases are built, approved and, later, signed: [code signing policy](CODE_SIGNING.md).
 
 ## Printing labels
 

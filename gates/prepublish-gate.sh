@@ -26,7 +26,7 @@ say "== ZweTag pre-publish gate over: $tree"
 [ -n "$tree" ] && [ -d "$tree" ] || { say "  FAIL  not a directory: $tree"; exit 1; }
 
 # ---- files that must exist -----------------------------------------------
-for f in README.md LICENSE NOTICE THIRD-PARTY-NOTICES.md SECURITY.md CONTRIBUTING.md CHANGELOG.md \
+for f in README.md LICENSE NOTICE THIRD-PARTY-NOTICES.md SECURITY.md CONTRIBUTING.md CHANGELOG.md CODE_SIGNING.md \
          go.mod web/index.html logo/icon/ZweTag.ico; do
   if [ -f "$tree/$f" ]; then ok "$f present"; else bad "$f is missing"; fi
 done

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Builds the four release binaries into dist/:
+# Builds the five release binaries into dist/:
 #
 #   scripts/build.sh <version>
 #
 #   dist/ZweTag.exe            windows/amd64, a GUI program (no console)
 #   dist/zwetag-linux-amd64    linux/amd64
+#   dist/zwetag-linux-arm64    linux/arm64, for example a Raspberry Pi 4 or 5
 #   dist/zwetag-darwin-arm64   darwin/arm64
 #   dist/zwetag-darwin-amd64   darwin/amd64
 #
@@ -36,5 +37,6 @@ build() {
 
 build windows amd64 ZweTag.exe "-s -w -H windowsgui -X main.Version=$version"
 build linux amd64 zwetag-linux-amd64 "-s -w -X main.Version=$version"
+build linux arm64 zwetag-linux-arm64 "-s -w -X main.Version=$version"
 build darwin arm64 zwetag-darwin-arm64 "-s -w -X main.Version=$version"
 build darwin amd64 zwetag-darwin-amd64 "-s -w -X main.Version=$version"
