@@ -6,6 +6,11 @@ All notable changes to ZweTag are recorded here. The format follows
 
 ## [Unreleased]
 
+### Changed
+- The README, NOTICE and tag format say the scheme is modeled on the identifier style of
+  ANSI/TIA-606 and make no claim of conformance with it. The README explains how to label a
+  server with several nodes or a blade chassis.
+
 ## [1.0.1] - 2026-10-02
 
 ### Added

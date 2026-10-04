@@ -38,7 +38,7 @@ says where you are and where the other end is:
     C0017 · Cat6 · 2 m
 
 `A01` is the rack, `40` is the rack unit of the device, `12` is the port. The other end carries
-the same two lines the other way round. The scheme follows the identifier format of ANSI/TIA-606,
+the same two lines the other way round. The scheme is modeled on the identifier style of ANSI/TIA-606,
 the administration standard for cabling.
 
 ## How it works
@@ -131,6 +131,12 @@ The exact rules are in [spec/tag-format.md](spec/tag-format.md), with test vecto
 [spec/tag-vectors.json](spec/tag-vectors.json) for anyone who wants to produce the same labels
 elsewhere.
 
+The scheme is modeled on the identifier style of ANSI/TIA-606. It is ZweTag's own description, not
+a copy or an implementation of that standard, and ZweTag does not claim conformance with it.
+
+A server with several nodes, or a blade chassis, is one device: add it once and name its ports after
+the nodes (Devices, then Port names), for example `N2-1`. The label then reads `A01-30:N2-1`.
+
 ## What ZweTag is not
 
 It does not discover devices, read live port status or trace a path through several panels, and it
@@ -176,4 +182,4 @@ It is provided as is, without warranty.
 
 "ZweTag", "Zwetwin", "Zweken" and the Z logo are trademarks of Zweken Technology. ANSI/TIA-606 is
 a standard of the Telecommunications Industry Association; ZweTag is not affiliated with or
-endorsed by TIA.
+endorsed by TIA and does not claim conformance with it.

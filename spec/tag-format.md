@@ -4,8 +4,10 @@ Version 1. This document is the reference for the identifiers ZweTag prints on c
 may implement it; [tag-vectors.json](tag-vectors.json) holds the test vectors an implementation
 must pass.
 
-The scheme follows the identifier style of ANSI/TIA-606: a cable end is named by where it is, so the
-label on either end of a cable says where that end is and where the other end is.
+The scheme is modeled on the identifier style of ANSI/TIA-606: a cable end is named by where it is,
+so the label on either end of a cable says where that end is and where the other end is. This
+document is ZweTag's own description. It is not part of that standard, and ZweTag makes no claim of
+conformance with it.
 
 ## Endpoint
 
@@ -16,7 +18,7 @@ Each end of a cable is described by these parts:
 | `kind` | `"rack"` \| `"free"` \| `"external"` | A device mounted in a rack, a device or outlet outside any rack, or an outside end such as a carrier circuit (WAN). |
 | `room` | string | Room code. May be empty. |
 | `rack` | string | Rack code. Used by `rack` only. |
-| `u` | integer | The rack unit of the device's **top edge**. Units are counted from the bottom of the rack, as in TIA-606. A value below 1 means the unit is unknown. |
+| `u` | integer | The rack unit of the device's **top edge**. Units are counted from the bottom of the rack, the usual convention. A value below 1 means the unit is unknown. |
 | `name` | string | Device or outlet name (`free`), or the name of the outside end (`external`). |
 | `port` | string | Port number or port name. |
 
@@ -54,7 +56,8 @@ The bare address of one end, without a room:
 
 Examples: `A01-40:12`, `A01-04:01`, `A02-38:Gi1/0/12`, `WO-12:01`, `A01-40`, `A01:03`, `ISP1`.
 
-Rack codes are never padded: rack `7` stays `7`.
+Rack codes are never padded: rack `7` stays `7`. A port name keeps its letters, so a chassis that
+holds several servers can name its ports after them: `A01-30:N2-1`.
 
 ### Room prefix
 

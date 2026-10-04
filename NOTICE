@@ -11,5 +11,6 @@ which forms part of this NOTICE.
 Technology and are not licensed under the Apache License.
 
 ANSI/TIA-606 is a standard of the Telecommunications Industry Association.
-ZweTag follows its identifier scheme; it is not affiliated with, endorsed by
-or certified by TIA.
+ZweTag's identifier scheme is modeled on the style of that standard; ZweTag makes
+no claim of conformance with it and is not affiliated with, endorsed by or
+certified by TIA.
