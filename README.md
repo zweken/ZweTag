@@ -132,7 +132,9 @@ The exact rules are in [spec/tag-format.md](spec/tag-format.md), with test vecto
 elsewhere.
 
 The scheme is modeled on the identifier style of ANSI/TIA-606. It is ZweTag's own description, not
-a copy or an implementation of that standard, and ZweTag does not claim conformance with it.
+a copy or an implementation of that standard, and ZweTag does not claim conformance with it. The
+standard covers much more than labels, such as records, reports, pathways and grounding. If you
+need to follow it, get the standard from TIA.
 
 A server with several nodes, or a blade chassis, is one device: add it once and name its ports after
 the nodes (Devices, then Port names), for example `N2-1`. The label then reads `A01-30:N2-1`.
